@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <form action="/addData" method="post">
+        <table>
+            <tr>
+                <td>Enter name : </td>
+                <td><input type="text" name="name"></td>
+            </tr>
+            <tr>
+                <td>Enter age : </td>
+                <td><input type="text" name="age"></td>
+            </tr>
+            <tr>
+                <td>Select gender : </td>
+                <td>
+                    <input type="radio" name="gender" value="male">Male
+                    <input type="radio" name="gender" value="female">Female
+                </td>
+            </tr>
+            <tr>
+                <td>Select hobby : </td>
+                <td>
+                    <input type="checkbox" name="hobby" value="Coding">Coding
+                    <input type="checkbox" name="hobby" value="Gaming">Gaming
+                    <input type="checkbox" name="hobby" value="Music">Music
+                    <input type="checkbox" name="hobby" value="Traveling">Traveling
+                </td>
+            </tr>
+            <tr>
+                <% var city = ["Surat","Vadodara","Bharuch","Bhavnagar"] %>
+                <td>Select city : </td>
+                <td>
+                    <select name="city">
+                        <option value="">--Select City--</option>
+                        <% city.map((v)=>{ %>
+                        <option value="<%= v %>"><%= v %></option>
+                        <% }) %>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Type message : </td>
+                <td><input type="text" name="message"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" value="Add Data"></td>
+            </tr>
+        </table>
+    </form>
+    <a href="/viewData">View</a>
+</body>
+</html>
